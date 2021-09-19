@@ -1,0 +1,5 @@
+Curso, Horas
+C#,4
+Java,8.5
+Python,4
+javascript,7
