@@ -22,6 +22,7 @@ Partial Class frmArchivos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmArchivos))
         Me.dgvDatos = New System.Windows.Forms.DataGridView()
         Me.btnLeer = New System.Windows.Forms.Button()
         Me.btnRegresar1 = New System.Windows.Forms.Button()
@@ -34,6 +35,7 @@ Partial Class frmArchivos
         Me.lblIndicaciones = New System.Windows.Forms.Label()
         Me.cboColumna = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnRefresca = New System.Windows.Forms.Button()
         CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -43,7 +45,7 @@ Partial Class frmArchivos
         Me.dgvDatos.AllowUserToResizeColumns = False
         Me.dgvDatos.AllowUserToResizeRows = False
         Me.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvDatos.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.dgvDatos.BackgroundColor = System.Drawing.Color.PaleGoldenrod
         Me.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvDatos.Location = New System.Drawing.Point(43, 168)
         Me.dgvDatos.Name = "dgvDatos"
@@ -53,32 +55,41 @@ Partial Class frmArchivos
         '
         'btnLeer
         '
-        Me.btnLeer.Location = New System.Drawing.Point(257, 23)
+        Me.btnLeer.BackColor = System.Drawing.Color.Wheat
+        Me.btnLeer.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnLeer.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnLeer.Location = New System.Drawing.Point(241, 19)
         Me.btnLeer.Name = "btnLeer"
-        Me.btnLeer.Size = New System.Drawing.Size(81, 28)
+        Me.btnLeer.Size = New System.Drawing.Size(96, 27)
         Me.btnLeer.TabIndex = 0
         Me.btnLeer.Text = "Leer Archivo"
-        Me.btnLeer.UseVisualStyleBackColor = True
+        Me.btnLeer.UseVisualStyleBackColor = False
         '
         'btnRegresar1
         '
-        Me.btnRegresar1.Location = New System.Drawing.Point(363, 23)
+        Me.btnRegresar1.BackColor = System.Drawing.Color.LightBlue
+        Me.btnRegresar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegresar1.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnRegresar1.Location = New System.Drawing.Point(351, 19)
         Me.btnRegresar1.Name = "btnRegresar1"
-        Me.btnRegresar1.Size = New System.Drawing.Size(71, 28)
+        Me.btnRegresar1.Size = New System.Drawing.Size(83, 27)
         Me.btnRegresar1.TabIndex = 1
         Me.btnRegresar1.Text = "Regresar"
-        Me.btnRegresar1.UseVisualStyleBackColor = True
+        Me.btnRegresar1.UseVisualStyleBackColor = False
         '
         'txtDireccion
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(43, 27)
+        Me.txtDireccion.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtDireccion.Location = New System.Drawing.Point(27, 23)
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.ReadOnly = True
         Me.txtDireccion.Size = New System.Drawing.Size(208, 23)
         Me.txtDireccion.TabIndex = 2
+        Me.txtDireccion.WordWrap = False
         '
         'txtCampo1
         '
+        Me.txtCampo1.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtCampo1.Location = New System.Drawing.Point(43, 95)
         Me.txtCampo1.Name = "txtCampo1"
         Me.txtCampo1.Size = New System.Drawing.Size(193, 23)
@@ -86,13 +97,16 @@ Partial Class frmArchivos
         '
         'btnBuscar
         '
+        Me.btnBuscar.BackColor = System.Drawing.Color.Wheat
         Me.btnBuscar.Enabled = False
-        Me.btnBuscar.Location = New System.Drawing.Point(241, 86)
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBuscar.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnBuscar.Location = New System.Drawing.Point(242, 90)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(97, 39)
+        Me.btnBuscar.Size = New System.Drawing.Size(95, 28)
         Me.btnBuscar.TabIndex = 7
         Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = True
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'ofdLectura
         '
@@ -100,26 +114,32 @@ Partial Class frmArchivos
         '
         'btnEscribir
         '
-        Me.btnEscribir.Location = New System.Drawing.Point(282, 277)
+        Me.btnEscribir.BackColor = System.Drawing.Color.Khaki
+        Me.btnEscribir.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEscribir.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnEscribir.Location = New System.Drawing.Point(290, 277)
         Me.btnEscribir.Name = "btnEscribir"
-        Me.btnEscribir.Size = New System.Drawing.Size(114, 38)
+        Me.btnEscribir.Size = New System.Drawing.Size(106, 38)
         Me.btnEscribir.TabIndex = 8
         Me.btnEscribir.Text = "Guardar"
-        Me.btnEscribir.UseVisualStyleBackColor = True
+        Me.btnEscribir.UseVisualStyleBackColor = False
         Me.btnEscribir.Visible = False
         '
         'lblIndicaciones
         '
         Me.lblIndicaciones.AutoSize = True
-        Me.lblIndicaciones.Location = New System.Drawing.Point(14, 289)
+        Me.lblIndicaciones.BackColor = System.Drawing.Color.Khaki
+        Me.lblIndicaciones.Font = New System.Drawing.Font("Lucida Sans", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblIndicaciones.Location = New System.Drawing.Point(12, 290)
         Me.lblIndicaciones.Name = "lblIndicaciones"
-        Me.lblIndicaciones.Size = New System.Drawing.Size(262, 15)
+        Me.lblIndicaciones.Size = New System.Drawing.Size(272, 14)
         Me.lblIndicaciones.TabIndex = 9
         Me.lblIndicaciones.Text = "ninguna coincidencia, agrege datos y guardelos:"
         Me.lblIndicaciones.Visible = False
         '
         'cboColumna
         '
+        Me.cboColumna.BackColor = System.Drawing.Color.PaleGoldenrod
         Me.cboColumna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboColumna.Enabled = False
         Me.cboColumna.FormattingEnabled = True
@@ -131,18 +151,36 @@ Partial Class frmArchivos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(50, 127)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Lucida Sans", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(43, 127)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 15)
+        Me.Label1.Size = New System.Drawing.Size(69, 15)
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "Columna:"
+        '
+        'btnRefresca
+        '
+        Me.btnRefresca.BackColor = System.Drawing.Color.Khaki
+        Me.btnRefresca.Enabled = False
+        Me.btnRefresca.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnRefresca.Location = New System.Drawing.Point(321, 139)
+        Me.btnRefresca.Name = "btnRefresca"
+        Me.btnRefresca.Size = New System.Drawing.Size(75, 23)
+        Me.btnRefresca.TabIndex = 12
+        Me.btnRefresca.Text = "Recargar"
+        Me.btnRefresca.UseVisualStyleBackColor = False
         '
         'frmArchivos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.DarkSeaGreen
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(446, 327)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnRefresca)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cboColumna)
         Me.Controls.Add(Me.lblIndicaciones)
@@ -153,7 +191,10 @@ Partial Class frmArchivos
         Me.Controls.Add(Me.txtDireccion)
         Me.Controls.Add(Me.btnRegresar1)
         Me.Controls.Add(Me.btnLeer)
+        Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmArchivos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmArchivos"
         CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -174,4 +215,5 @@ Partial Class frmArchivos
     Friend WithEvents lblIndicaciones As Label
     Friend WithEvents cboColumna As ComboBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnRefresca As Button
 End Class

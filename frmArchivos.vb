@@ -84,6 +84,7 @@ Class frmArchivos
         lblIndicaciones.Visible = False
         cboColumna.Enabled = False
         cboColumna.Items.Clear()
+        btnRefresca.Enabled = False
     End Sub
 
 
@@ -107,6 +108,8 @@ Class frmArchivos
             dgvDatos.AllowUserToAddRows = True 'el usuario puede añadir datos
             btnEscribir.Visible = True 'aparece el boton de guardar
             lblIndicaciones.Visible = True 'aparece un pequeño mensaje 
+        Else
+            btnRefresca.Enabled = True
         End If
 
     End Sub
@@ -146,5 +149,11 @@ Class frmArchivos
 
         cboColumna.SelectedIndex = 0 'esto es para no tener un espacio en blanco en el combobox
 
+    End Sub
+
+    Private Sub btnRefresca_Click(sender As Object, e As EventArgs) Handles btnRefresca.Click
+        CargarDatos()
+        lblIndicaciones.Visible = False
+        btnEscribir.Visible = False
     End Sub
 End Class

@@ -20,3 +20,4 @@ C:\Users\crist\Desktop\Universidad\Desarollo VIII\Rodriguez_Cristobal\4. Activid
 C:\Users\crist\Desktop\Universidad\Desarollo VIII\Rodriguez_Cristobal\4. Actividades o Asignaciones\2. Investigaciones\Inv1_Eq_1_2_DateFiles\VB_Inv1_DateFiles\obj\Debug\net5.0-windows\VB_Inv1_DateFiles.frmEditor.resources
 C:\Users\crist\Desktop\Universidad\Desarollo VIII\Rodriguez_Cristobal\4. Actividades o Asignaciones\2. Investigaciones\Inv1_Eq_1_2_DateFiles\VB_Inv1_DateFiles\obj\Debug\net5.0-windows\VB_Inv1_DateFiles.frmArchivos.resources
 C:\Users\crist\Desktop\Universidad\Desarollo VIII\Rodriguez_Cristobal\4. Actividades o Asignaciones\2. Investigaciones\Inv1_Eq_1_2_DateFiles\VB_Inv1_DateFiles\obj\Debug\net5.0-windows\VB_Inv1_DateFiles.frmFormatos.resources
+C:\Users\crist\Desktop\Universidad\Desarollo VIII\Rodriguez_Cristobal\4. Actividades o Asignaciones\2. Investigaciones\Inv1_Eq_1_2_DateFiles\VB_Inv1_DateFiles\obj\Debug\net5.0-windows\VB_Inv1_DateFiles.Resources.resources
